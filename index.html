@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Love-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <div class="container">
+            <h2>Check Your Compatibility...</h2>
+
+            <div class="lovebirds">
+                <div class="user">
+                    <form action="">
+                        <h4>Your Name<h4>
+                                <input type="text" class="input-box" id="user" placeholder="Enter Your Name"> <br>
+                                <form action=""> <input type="radio" class="user-female" name="gender" value="female"><label for="female">Female</label> <br>
+                                    <input type="radio" class="user-male" name="gender" value="male"><label for="male">Male</label>
+                                </form>
+
+                </div>
+                <div class="love">
+                    <img src="lovee.png" alt="love icon">
+                </div>
+                <div class="partner">
+
+                    <h4>Your Partner's Name<h4>
+
+                            <input type="text" class="input-box" id="lover" placeholder="Enter Your Partner's Name">
+                            <br>
+                            <form method="post" action="">
+                                <input type="radio" class="partner-female" name="gender" value="female"><label for="female">Female</label> <br>
+                                <input type="radio" class="partner-male" name="gender" value="male"><label for="male">Male</label>
+                            </form>
+
+                </div>
+            </div>
+            <button class="button" onclick="loveChecker(event)">calculate love %</button>
+            </form>
+            <p id="result"> </p>
+        </div>
+
+
+
+    </main>
+</body>
+
+<script>
+
+
+    // const gender = document.querySelectorAll(".radio");
+    // const button = document.querySelector(".button")
+
+    function loveChecker(e) {
+        e.preventDefault();
+        var user = document.getElementById("user").value;
+        var lover = document.getElementById("lover").value;
+        if (user.length <= 2) {
+            alert("Enter at least 3 characters");
+        } if (lover.lenght <= 2) {
+            alert("Enter at least 3 characters")
+        }
+
+        else {
+            var loveCalc = Math.random() * 100;
+            loveCalcResult = Math.floor(loveCalc) + 1;
+
+            var firstChar = user.slice(0,1);
+         upperFirstChar = firstChar.toUpperCase();
+         var otherChar = user.slice(1,name.lenght);
+        lowerOtherChar = otherChar.toLowerCase();
+         var capitalized = upperFirstChar + lowerOtherChar;
+
+         var loverFirstChar = lover.slice(0,1);
+        loverUpperFirstChar = loverFirstChar.toUpperCase();
+        var loverOtherChar = lover.slice(1,name.lenght);
+        loverLowerOtherChar = loverOtherChar.toLowerCase();
+         var loverCapitalized = loverUpperFirstChar + loverLowerOtherChar;
+
+
+            document.getElementById("result").innerHTML = capitalized + " and " + loverCapitalized + " have "
+                + loveCalcResult + "% " + " love. ";
+
+        }
+
+    }
+    
+
+
+
+</script>
+
+</html>
